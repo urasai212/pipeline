@@ -28,7 +28,9 @@
     </dependency>
   </dependencies>
 
-  <build>
+
+<build>
+
     <finalName>pipeline</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -61,6 +63,17 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+
+<plugin>
+   <groupId>org.apache.tomcat.maven</groupId>
+   <artifactId>tomcat7-maven-plugin</artifactId>
+   <version>2.2</version>
+   <configuration>
+         <url>http://35.237.118.216:7777/manager/text/</url>
+         <server>TomcatServer</server>
+         <path>/WebApps</path>
+   </configuration>
+</plugin>
       </plugins>
     </pluginManagement>
   </build>
