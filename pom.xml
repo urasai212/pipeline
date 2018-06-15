@@ -6,7 +6,7 @@
 
   <groupId>com.digital.lync</groupId>
   <artifactId>pipeline</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>war</packaging>
 
   <name>pipeline Maven Webapp</name>
@@ -27,7 +27,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+<distributionManagement>
+  <snapshotRepository>
+    <id>snapshot</id>
+    <url>http://35.237.125.37:8081/nexus/content/repositories/snapshot</url>
+  </snapshotRepository>
+  <repository>
+    <id>release</id>
+    <url>http://35.237.125.37:8081/nexus/content/repositories/release</url>
+  </repository>
+</distributionManagement>
 
 <build>
 
@@ -69,9 +78,9 @@
    <artifactId>tomcat7-maven-plugin</artifactId>
    <version>2.2</version>
    <configuration>
-         <url>http://35.237.118.216:7777/manager/text/</url>
+         <url>http://35.237.125.37:7777/manager/text/</url>
          <server>TomcatServer</server>
-         <path>/WebApps</path>
+         <path>/WebApps1</path>
    </configuration>
 </plugin>
       </plugins>
